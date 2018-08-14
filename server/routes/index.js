@@ -46,6 +46,7 @@ function addBlob(req, res) {
     if(err) {
       res.json({'ERROR': err});
     } else {
+      console.log('newBlob=', newBlob)
       res.json({'SUCCESS': newBlob});
     }
   });
