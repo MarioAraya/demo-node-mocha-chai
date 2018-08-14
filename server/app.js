@@ -10,6 +10,9 @@ var mongoose = require('mongoose');
 // *** routes *** //
 var routes = require('./routes/index.js');
 
+// *** config file *** //
+var config = require('./_config');
+
 // *** express instance *** //
 var app = express();
 
