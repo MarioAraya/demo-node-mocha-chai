@@ -10,15 +10,18 @@ var mongoose = require('mongoose');
 // *** routes *** //
 var routes = require('./routes/index.js');
 
+// *** config file *** //
+var config = require('./_config');
+
 // *** express instance *** //
 var app = express();
 
 // *** mongoose *** ///
-mongoose.connect('mongodb://localhost/node-testing', function(err, res) {
+mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
   if(err) {
     console.log('Error connecting to the database. ' + err);
   } else {
-    console.log('Connected to Database!');
+    console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
   }
 });
 
